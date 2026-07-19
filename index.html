@@ -196,8 +196,40 @@ a:hover{color:#7DD3FC}
       </div>
     </section>
 
+    <!-- TECHNOLOGY IN ACTION -->
+    <section style="padding:90px 5vw;background:#060917">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">TECHNOLOGY IN ACTION</div>
+        <h2 style="margin:0 0 12px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:640px">See the tech you could work on</h2>
+        <p style="margin:0 0 40px;font-size:15px;line-height:1.6;color:#9AA3C4;max-width:560px">Real capabilities, from the official HTX channel — the kind of work waiting on the other side of your degree.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+          <sc-for list="{{ workVideos }}" as="v" hint-placeholder-count="4">
+            <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03)">
+              <div style="position:relative;aspect-ratio:16/9;background:#04060F">
+                <sc-if value="{{ v.isThumb }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ v.play }}" style="position:absolute;inset:0;border:none;cursor:pointer;padding:0;overflow:hidden;background:#04060F">
+                    {{ v.thumbImg }}
+                    <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,23,.5),transparent 62%)"></span>
+                    <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:rgba(124,58,237,.92);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;box-shadow:0 8px 22px -6px rgba(124,58,237,.85)">▶</span>
+                  </button>
+                </sc-if>
+                <sc-if value="{{ v.isPlaying }}" hint-placeholder-val="{{ false }}">
+                  <iframe src="{{ v.embed }}" title="{{ v.title }}" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </sc-if>
+              </div>
+              <div style="padding:16px 18px 18px">
+                <div style="font-size:10.5px;letter-spacing:1.5px;color:#22D3EE;margin-bottom:8px">{{ v.tag }}</div>
+                <h3 style="margin:0 0 6px;font-family:'Space Grotesk';font-weight:600;font-size:17px;color:#fff">{{ v.title }}</h3>
+                <p style="margin:0;font-size:13.5px;line-height:1.5;color:#A8AFCC">{{ v.text }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
     <!-- CAREER POSSIBILITIES -->
-    <section style="padding:96px 5vw;background:#060917">
+    <section style="padding:96px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#8B5CF6;margin-bottom:12px">CAREER POSSIBILITIES</div>
         <h2 style="margin:0 0 44px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:640px">Grow deep, grow broad, or grow into leadership</h2>
@@ -481,6 +513,24 @@ a:hover{color:#7DD3FC}
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:14px">SCHOLARSHIP &amp; APPLY</div>
         <h1 style="margin:0 0 22px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(36px,5.5vw,60px);line-height:1.05;letter-spacing:-1.3px;color:#fff;max-width:720px">Ready to begin your HTX journey?</h1>
         <p style="margin:0;font-size:17.5px;line-height:1.65;color:#C3C9E0;max-width:640px">The HTX Scholarship supports talented students who are passionate about science and technology and want to contribute to Singapore's safety and security.</p>
+        <div style="margin-top:40px;max-width:620px">
+          <div style="position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#04060F;aspect-ratio:16/9;box-shadow:0 24px 55px -24px rgba(124,58,237,.55)">
+            <sc-if value="{{ applyVideo.isPlaying }}" hint-placeholder-val="{{ false }}">
+              <iframe src="{{ applyVideo.embed }}" title="HTX Scholarship" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </sc-if>
+            <sc-if value="{{ applyVideo.showChrome }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ applyVideo.play }}" style="position:absolute;inset:0;border:none;cursor:pointer;padding:0;overflow:hidden;background:#04060F">
+                {{ applyVideo.thumbImg }}
+                <span style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,23,.72),transparent 58%)"></span>
+                <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--htx-grad,linear-gradient(135deg,#7C3AED,#22D3EE));display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;box-shadow:0 12px 30px -8px rgba(124,58,237,.85)">▶</span>
+                <span style="position:absolute;left:22px;bottom:18px;text-align:left">
+                  <span style="display:block;font-family:'Space Grotesk';font-weight:600;font-size:16px;color:#fff">Watch: the HTX Scholarship</span>
+                  <span style="display:block;font-size:12.5px;color:#C3C9E0;margin-top:2px">Official film · HTXSG on YouTube</span>
+                </span>
+              </button>
+            </sc-if>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -811,20 +861,33 @@ class Component extends DCLogic {
         showChrome: !(has&&play===pid), thumb:m.thumb||'', embed:m.embed||'', thumbImg,
         play: () => this.setState({playing: pid}) };
     };
+    // Scholar-interview reels: intentionally left as drop-in slots until HTX
+    // publishes real scholar reels \u2014 generic agency videos don't answer these
+    // questions, so a blank slot is more honest than a mismatched clip.
     const reelData = [
-      { slot:'reel1', video:'AOFqkSU-IUY', q:'What did your mentor help you see differently?' },
-      { slot:'reel2', video:'175dPVrbvXA', q:'What did your internship teach you that uni couldn\u2019t?' },
-      { slot:'reel3', video:'6-52j8cFphA', q:'When did HTX\u2019s mission become real to you?' },
-      { slot:'reel4', video:'tsARY2Hm_WM', q:'What are you hoping to build when you return?' },
-      { slot:'reel5', video:'0QA52clrjsA', q:'What would you tell a new HTX scholar?' },
+      { slot:'reel1', q:'What did your mentor help you see differently?' },
+      { slot:'reel2', q:'What did your internship teach you that uni couldn\u2019t?' },
+      { slot:'reel3', q:'When did HTX\u2019s mission become real to you?' },
+      { slot:'reel4', q:'What are you hoping to build when you return?' },
+      { slot:'reel5', q:'What would you tell a new HTX scholar?' },
     ];
     const reels = reelData.map((r,i)=>mkV(r, 'reel-'+(r.video||i)));
     const heroVideo = mkV({ video:'Tza1qAg2Vho' }, 'hero-film');
+    // Official HTXSG tech films — shown on Work & Careers, where capability
+    // showcases belong (not as stand-ins for scholar interviews).
+    const workVideoData = [
+      { video:'hIqxOVzcSdk', tag:'PROTECT PUBLIC SPACES', title:'Drone Interceptor', text:'Detecting and taking down rogue drones over Singapore.' },
+      { video:'tsARY2Hm_WM', tag:'SAVE LIVES', title:'Common Vetronics Architecture', text:'One digital backbone for Home Team response vehicles.' },
+      { video:'175dPVrbvXA', tag:'CAREERS @ HTX', title:'AI TechXplore', text:'The AI engineering behind Home Team operations.' },
+      { video:'DxZZ5ZshIrI', tag:'SHOWCASE', title:'HTX Convention 2026', text:'Highlights from the frontline of public-safety tech.' },
+    ];
+    const workVideos = workVideoData.map(v => mkV(v, 'work-'+v.video));
+    const applyVideo = mkV({ video:'AOFqkSU-IUY' }, 'apply-film');
     const allWall = [
       { cat:'people', video:'Tza1qAg2Vho', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'What is HTX? The science & technology arm of the Home Team.' },
-      { cat:'tech', video:'hIqxOVzcSdk', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'Drone Interceptor \u2014 taking down rogue drones over Singapore.' },
       { cat:'people', video:'-jaH8tTZcLk', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'Want to work for HTX? Hear it from the people building the tech.' },
-      { cat:'tech', video:'DxZZ5ZshIrI', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'HTX Convention 2026 \u2014 highlights from the frontline of public-safety tech.' },
+      { cat:'life', video:'0QA52clrjsA', tag:'Scholar Life', chip:'#7C3AED', src:'YouTube', text:'HTXpress visits Hwa Chong \u2014 scholarships and careers, on the road.' },
+      { cat:'tech', video:'6-52j8cFphA', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'Exponentially impacting Singapore\u2019s safety and security.' },
       { cat:'life', slot:'w5', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'HTX scholars suit up for a cleanroom visit during the scholars\u2019 programme.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-3.jpg?sfvrsn=adaceb06_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
       { cat:'life', slot:'w6', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'Different journeys, one shared purpose \u2014 scholar life beyond the classroom.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-5.jpg?sfvrsn=3fa4eb3b_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
     ];
@@ -875,6 +938,7 @@ class Component extends DCLogic {
       beyond,
       journeyTabs, activeJourney: journey[ji], journeyProgress: `${((ji+1)/journey.length)*100}%`,
       scholarTabs, activeScholar: scholars[sti], reels, wallTabs, wallCards,
+      workVideos, applyVideo,
       supports: ['Tuition, examination and other compulsory university fees','Living allowances','Other approved expenses, such as medical examination and visa-processing fees','A one-time pre-studies allowance','Sponsorship for relevant exchange or summer programmes','Master\u2019s sponsorship, subject to approval','Mid-term scholars: reimbursement of fees paid before the award'],
       eligibility: ['Passionate about science and technology, with a strong academic record','Keen to contribute to Singapore\u2019s safety and security through public service','Singapore Citizen (or as specified on the BrightSparks listing)','Applying to, or enrolled in, a relevant course approved by HTX'],
       areas: [
