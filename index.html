@@ -160,12 +160,8 @@ a:hover{color:#7DD3FC}
             <div style="font-size:12px;letter-spacing:2px;color:#8B5CF6;margin-bottom:16px">{{ activeMission.tag }}</div>
             <h3 style="margin:0 0 18px;font-family:'Space Grotesk';font-weight:700;font-size:34px;line-height:1.08;color:#fff">{{ activeMission.title }}</h3>
             <p style="margin:0 0 30px;font-size:16px;line-height:1.65;color:#B4BAD6;max-width:460px">{{ activeMission.body }}</p>
-            <div style="font-size:12px;letter-spacing:1.5px;color:#6B7399;margin-bottom:12px">POSSIBLE FIELDS</div>
-            <div style="display:flex;flex-wrap:wrap;gap:9px">
-              <sc-for list="{{ activeMission.fields }}" as="f" hint-placeholder-count="5">
-                <span style="padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#EAECF5">{{ f }}</span>
-              </sc-for>
-            </div>
+            <div style="font-size:12px;letter-spacing:1.5px;color:#6B7399;margin-bottom:10px">POSSIBLE FIELDS OF STUDY</div>
+            <p style="margin:0;font-size:15px;line-height:1.8;color:#D3D8EC">{{ activeMission.fieldsText }}</p>
           </div>
           <div style="position:relative;min-height:340px;background:#04060F">
             <image-slot id="{{ activeMission.slotId }}" shape="rect" placeholder="Mission footage — officers using HTX technology in the field" src="{{ activeMission.img }}" credit="{{ activeMission.credit }}" credit-href="{{ activeMission.creditHref }}"></image-slot>
@@ -266,12 +262,11 @@ a:hover{color:#7DD3FC}
         <div style="font-size:12px;letter-spacing:2.5px;color:#8B5CF6;margin-bottom:14px">SCHOLAR EXPERIENCE</div>
         <h1 style="margin:0 0 28px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-1.3px;color:#fff;max-width:840px">Supported at every stage.<br>Challenged to <span style="background:var(--htx-head,linear-gradient(120deg,#A78BFA,#22D3EE));-webkit-background-clip:text;background-clip:text;color:transparent">experience more.</span></h1>
         <p style="margin:0 0 34px;font-size:17px;line-height:1.65;color:#B4BAD6;max-width:680px">Strong professionals are shaped by more than academic achievement. They grow through new environments, real-world experiences, trusted relationships and chances to test what they know.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:16px">
-          <div style="flex:1;min-width:280px;padding:24px 26px;border-radius:16px;background:rgba(124,58,237,.10);border:1px solid rgba(124,58,237,.30)">
-            <div style="font-family:'Space Grotesk';font-weight:600;font-size:17px;color:#fff;line-height:1.4">We will support you throughout your journey.</div>
-          </div>
-          <div style="flex:1;min-width:280px;padding:24px 26px;border-radius:16px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.28)">
-            <div style="font-family:'Space Grotesk';font-weight:600;font-size:17px;color:#fff;line-height:1.4">We will encourage you to experience the world beyond the classroom.</div>
+        <div style="max-width:680px">
+          <div style="font-size:12px;letter-spacing:2px;color:#6B7399;margin-bottom:14px">OUR TWO COMMITMENTS TO YOU</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="padding:4px 0 4px 20px;border-left:3px solid #8B5CF6;font-family:'Space Grotesk';font-weight:600;font-size:18px;color:#fff;line-height:1.45">We will support you throughout your journey.</div>
+            <div style="padding:4px 0 4px 20px;border-left:3px solid #22D3EE;font-family:'Space Grotesk';font-weight:600;font-size:18px;color:#fff;line-height:1.45">We will encourage you to experience the world beyond the classroom.</div>
           </div>
         </div>
       </div>
@@ -281,7 +276,7 @@ a:hover{color:#7DD3FC}
     <section style="padding:88px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">THREE LAYERS OF SUPPORT</div>
-        <h2 style="margin:0 0 36px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">Three roles. One person supported — you.</h2>
+        <h2 style="margin:0 0 36px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">Three roles, all focused on one person — you</h2>
         <div style="display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <sc-for list="{{ supportTabs }}" as="s" hint-placeholder-count="3">
@@ -330,7 +325,7 @@ a:hover{color:#7DD3FC}
     <section style="padding:96px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">THE SCHOLAR JOURNEY</div>
-        <h2 style="margin:0 0 40px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">Your journey is yours — but you won't navigate it alone</h2>
+        <h2 style="margin:0 0 40px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">What the journey looks like, stage by stage</h2>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px">
           <sc-for list="{{ journeyTabs }}" as="j" hint-placeholder-count="4">
             <button onClick="{{ j.go }}" style="{{ j.style }}">{{ j.label }}</button>
@@ -382,7 +377,7 @@ a:hover{color:#7DD3FC}
           <div style="display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ scholarTabs }}" as="s" hint-placeholder-count="4">
               <button onClick="{{ s.go }}" style="{{ s.style }}">
-                <span style="flex:none;width:46px;height:46px;border-radius:11px;overflow:hidden;background:#0B1030;display:block"></span>
+                <span style="flex:none;width:46px;height:46px;border-radius:11px;overflow:hidden;background:#0B1030;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:15px;color:#C4B5FD">{{ s.initials }}</span>
                 <span style="text-align:left;line-height:1.25">
                   <span style="display:block;font-family:'Space Grotesk';font-weight:700;font-size:15.5px;color:#fff">{{ s.name }}</span>
                   <span style="display:block;font-size:12.5px;color:#9AA3C4">{{ s.discipline }}</span>
@@ -425,7 +420,7 @@ a:hover{color:#7DD3FC}
             <div style="flex:none;width:230px;scroll-snap-align:start">
               <div style="position:relative;width:230px;height:340px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#04060F">
                 <sc-if value="{{ r.isSlot }}" hint-placeholder-val="{{ true }}">
-                  <image-slot id="{{ r.slot }}" shape="rect" placeholder="Vertical reel"></image-slot>
+                  <image-slot id="{{ r.slot }}" shape="rect" placeholder="Scholar reel — coming soon"></image-slot>
                 </sc-if>
                 <sc-if value="{{ r.isThumb }}" hint-placeholder-val="{{ false }}">
                   <button onClick="{{ r.play }}" style="position:absolute;inset:0;border:none;cursor:pointer;padding:0;overflow:hidden;background:#04060F">
@@ -438,7 +433,9 @@ a:hover{color:#7DD3FC}
                 <sc-if value="{{ r.showChrome }}" hint-placeholder-val="{{ true }}">
                   <div style="position:absolute;inset:0;pointer-events:none">
                     <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,23,.92),transparent 55%)"></div>
-                    <div style="position:absolute;left:16px;top:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px">▶</div>
+                    <sc-if value="{{ r.isThumb }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:16px;top:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px">▶</div>
+                    </sc-if>
                     <div style="position:absolute;left:18px;right:18px;bottom:18px;font-family:'Space Grotesk';font-weight:600;font-size:16px;line-height:1.3;color:#fff">{{ r.q }}</div>
                   </div>
                 </sc-if>
@@ -647,8 +644,8 @@ a:hover{color:#7DD3FC}
       <div style="position:relative;max-width:900px;margin:0 auto;text-align:center">
         <h2 style="margin:0 0 30px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,4.2vw,46px);line-height:1.1;letter-spacing:-1px;color:#fff">Solve for X. See it work in the real world.</h2>
         <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-          <a href="#" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:var(--htx-grad,linear-gradient(135deg,#7C3AED,#22D3EE));color:#fff;font-family:'Space Grotesk';font-weight:600;font-size:16px;box-shadow:0 12px 30px -10px rgba(124,58,237,.75)">Apply on BrightSparks →</a>
-          <a href="#" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;font-family:'Space Grotesk';font-weight:600;font-size:16px">Contact the Scholarship Team</a>
+          <a href="https://brightsparks.com.sg/profile/htx/scholarship.php" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:var(--htx-grad,linear-gradient(135deg,#7C3AED,#22D3EE));color:#fff;font-family:'Space Grotesk';font-weight:600;font-size:16px;box-shadow:0 12px 30px -10px rgba(124,58,237,.75)">Apply on BrightSparks →</a>
+          <a href="https://www.htx.gov.sg/contact-us" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;font-family:'Space Grotesk';font-weight:600;font-size:16px">Contact the Scholarship Team</a>
         </div>
       </div>
     </section>
@@ -675,8 +672,8 @@ a:hover{color:#7DD3FC}
         </div>
         <div>
           <div style="font-size:11px;letter-spacing:2px;color:#5B6488;margin-bottom:14px">APPLY</div>
-          <a href="#" style="display:block;padding:5px 0;color:#C3C9E0;font-size:14px">BrightSparks Portal</a>
-          <a href="#" style="display:block;padding:5px 0;color:#C3C9E0;font-size:14px">Scholarship Team</a>
+          <a href="https://brightsparks.com.sg/profile/htx/scholarship.php" target="_blank" rel="noopener" style="display:block;padding:5px 0;color:#C3C9E0;font-size:14px">BrightSparks Portal</a>
+          <a href="https://www.htx.gov.sg/contact-us" target="_blank" rel="noopener" style="display:block;padding:5px 0;color:#C3C9E0;font-size:14px">Contact HTX</a>
         </div>
       </div>
     </div>
@@ -854,6 +851,7 @@ class Component extends DCLogic {
     const sti = this.state.story;
     const scholarTabs = scholars.map((s,i)=>({
       name:s.name, discipline:s.discipline,
+      initials: s.name.split(' ').map(w=>w[0]).slice(0,2).join(''),
       go:()=>this.setState({story:i}),
       style:`display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;cursor:pointer;transition:all .15s;border:1px solid ${i===sti?'transparent':'rgba(255,255,255,.10)'};background:${i===sti?'linear-gradient(135deg,rgba(124,58,237,.35),rgba(34,211,238,.15))':'rgba(255,255,255,.03)'}`,
     }));
@@ -938,7 +936,7 @@ class Component extends DCLogic {
       navItems,
       heroEyebrow: hero.eyebrow, heroPre: hero.pre, heroAccent: hero.accent, heroSub: hero.sub, heroVideo,
       reasons,
-      missionTabs, activeMission: missions[mi], pipeline, careers,
+      missionTabs, activeMission: { ...missions[mi], fieldsText: missions[mi].fields.join(' · ') }, pipeline, careers,
       supportTabs, activeSupport: support[si],
       beyond,
       journeyTabs, activeJourney: journey[ji], journeyProgress: `${((ji+1)/journey.length)*100}%`,
