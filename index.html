@@ -388,7 +388,7 @@ a:hover{color:#7DD3FC}
           <div style="border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:linear-gradient(155deg,rgba(124,58,237,.12),rgba(34,211,238,.04))">
             <div style="display:grid;grid-template-columns:300px 1fr">
               <div style="position:relative;min-height:100%;background:#04060F">
-                <image-slot id="scholar-photo" shape="rect" placeholder="Scholar portrait / reel" src="https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-1.jpg?sfvrsn=a9adc3ea_2" credit="Photo: HTX — Meet the 2025 HTX scholars" credit-href="https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety"></image-slot>
+                <image-slot id="{{ activeScholar.slotId }}" shape="rect" placeholder="Scholar portrait" src="{{ activeScholar.img }}" credit="{{ activeScholar.credit }}" credit-href="{{ activeScholar.storyHref }}"></image-slot>
                 <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:999px;background:rgba(6,9,23,.7);backdrop-filter:blur(6px);font-size:11px;letter-spacing:1px;color:#C4B5FD">{{ activeScholar.category }}</div>
               </div>
               <div style="padding:36px 38px">
@@ -402,11 +402,12 @@ a:hover{color:#7DD3FC}
                     </div>
                   </sc-for>
                 </div>
+                <a href="{{ activeScholar.storyHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#38BDF8">Read the full story on htx.gov.sg →</a>
               </div>
             </div>
           </div>
         </div>
-        <p style="margin:0;font-size:12.5px;color:#5B6488;max-width:820px">Profiles summarise publicly shared HTX scholar journeys. Portraits and reels are placeholders for approved scholar media.</p>
+        <p style="margin:0;font-size:12.5px;color:#5B6488;max-width:820px">Profiles and photos are drawn from publicly shared HTX stories — follow the link on each profile to read the scholar's full feature on htx.gov.sg.</p>
       </div>
     </section>
 
@@ -827,22 +828,26 @@ class Component extends DCLogic {
       style:`padding:11px 18px;border-radius:999px;cursor:pointer;font-family:'Space Grotesk';font-weight:600;font-size:14px;transition:all .15s;border:1px solid ${i===ji?'transparent':'rgba(255,255,255,.16)'};background:${i===ji?'var(--htx-grad,linear-gradient(135deg,#7C3AED,#22D3EE))':'rgba(255,255,255,.03)'};color:${i===ji?'#fff':'#B4BAD6'}`,
     }));
     const scholars = [
-      { name:'Jaren Chua', discipline:'Computer Engineering', category:'FINDING MY PLACE', role:'HTX Scholar · Computer Engineering, University of Illinois Urbana-Champaign', qa:[
+      { name:'Jaren Chua', discipline:'Computer Engineering', category:'FINDING MY PLACE', role:'HTX Scholar · Computer Engineering, University of Illinois Urbana-Champaign',
+        slotId:'scholar-jaren', img:'https://www.htx.gov.sg/images/default-source/stories/2024-jul-sep/jaren-chua-profile-min.jpg?sfvrsn=da522b29_5', credit:'Photo: HTX', storyHref:'https://www.htx.gov.sg/join-us/our-stories/2024/meet-our-htx-scholar--jaren-chua', qa:[
         {q:'What first attracted you to HTX?', a:'The chance to work at the intersection of robotics, sensing and AI on problems with real operational stakes — I first came across the scholarship through a careers portal and HTX\u2019s social channels.'},
         {q:'What did you study, and why?', a:'Computer engineering — it lets me build across hardware and software, from sensors to sense-making.'},
         {q:'What public-safety challenge would you like to help solve?', a:'Making immigration clearance faster and more seamless — ultimately, secure passport-less travel.'},
       ]},
-      { name:'Ng Jian Yan', discipline:'Human Factors Science', category:'SEEING THE WORLD DIFFERENTLY', role:'Human Performance, Interaction & Teaming Scientist · MPhil Technology Policy, University of Cambridge', qa:[
+      { name:'Ng Jian Yan', discipline:'Human Factors Science', category:'SEEING THE WORLD DIFFERENTLY', role:'Human Performance, Interaction & Teaming Scientist · MPhil Technology Policy, University of Cambridge',
+        slotId:'scholar-jianyan', img:'https://www.htx.gov.sg/images/default-source/stories/2021/ng-jian-yan_scdf.jpg?sfvrsn=53c22c60_1', credit:'Photo: HTX', storyHref:'https://www.htx.gov.sg/our-people/get-to-know-them/talent-details/the-writer-and-the-sportsman-two-scholars-different-roads-to-htx', qa:[
         {q:'Which experience broadened your perspective most?', a:'An internship developing image-dehazing models for maritime surveillance, plus the Home Team Scholars\u2019 Vacation Programme — theory suddenly had an operational edge.'},
         {q:'What did you study, and why?', a:'I moved toward technology policy to understand how science translates into decisions people can trust.'},
         {q:'When did HTX\u2019s mission become real to you?', a:'Seeing a model I helped build sharpen what a Coast Guard officer could actually see at sea.'},
       ]},
-      { name:'Muadz Yamani', discipline:'Engineering', category:'CLASSROOM TO REAL-WORLD', role:'HTX Local Merit Scholar · internship with Robotics, Automation & Unmanned Systems', qa:[
+      { name:'Muadz Yamani', discipline:'Engineering', category:'CLASSROOM TO REAL-WORLD', role:'HTX Local Merit Scholar · internship with Robotics, Automation & Unmanned Systems',
+        slotId:'scholar-muadz', img:'https://www.htx.gov.sg/images/default-source/stories/2022/2-muadz_compressedaffaad34-8899-44ab-b04d-fb145965941c.jpg?sfvrsn=300f07c0_1', credit:'Photo: HTX', storyHref:'https://www.htx.gov.sg/join-us/our-stories/2022/congratulations-to-our-htx-scholars', qa:[
         {q:'What did your internship teach you that university could not?', a:'Working on an SCDF motorised stretcher showed me how much a design decision matters when a paramedic is the end user.'},
         {q:'What first attracted you to HTX?', a:'Engineering that officers depend on in the moments that count.'},
         {q:'What public-safety challenge would you like to help solve?', a:'Reducing the physical load on frontline responders through better robotics.'},
       ]},
-      { name:'Cheryl Kwek', discipline:'Computer Science', category:'CLASSROOM TO REAL-WORLD', role:'HTX Scholar · Computer Science, Singapore University of Technology & Design', qa:[
+      { name:'Cheryl Kwek', discipline:'Computer Science', category:'CLASSROOM TO REAL-WORLD', role:'HTX Scholar · Computer Science, Singapore University of Technology & Design',
+        slotId:'scholar-cheryl', img:'https://www.htx.gov.sg/images/default-source/stories/2022/1-scholars.jpg?sfvrsn=64e2f7f9_3', credit:'Photo: Singapore Police Force', storyHref:'https://www.htx.gov.sg/join-us/our-stories/2022/congratulations-to-our-htx-scholars', qa:[
         {q:'What did you study, and why?', a:'Computer science with a robotics focus — a passion I\u2019ve chased since leading my school\u2019s robotics club.'},
         {q:'What first attracted you to HTX?', a:'Robotics applied to keeping people safe, not just to competitions and labs.'},
         {q:'What public-safety challenge would you like to help solve?', a:'Autonomous systems that can go where it\u2019s too dangerous for officers.'},
