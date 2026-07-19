@@ -168,7 +168,7 @@ a:hover{color:#7DD3FC}
             </div>
           </div>
           <div style="position:relative;min-height:340px;background:#04060F">
-            <image-slot id="work-mission" shape="rect" placeholder="Mission footage — officers using HTX technology in the field"></image-slot>
+            <image-slot id="work-mission" shape="rect" placeholder="Mission footage — officers using HTX technology in the field" src="https://www.htx.gov.sg/images/default-source/news/2025/techxplore-at-garage-htx/techxplore-cover.jpg?sfvrsn=318b375d_3" credit="Photo: HTX TechXplore" credit-href="https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/revolutionising-home-team-operations-on-all-fronts"></image-slot>
             <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,9,23,.85),transparent 45%);pointer-events:none"></div>
             <div aria-hidden="true" style="position:absolute;right:24px;bottom:14px;font-family:'Space Grotesk';font-weight:700;font-size:150px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);pointer-events:none">X</div>
           </div>
@@ -361,7 +361,7 @@ a:hover{color:#7DD3FC}
           <div style="border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:linear-gradient(155deg,rgba(124,58,237,.12),rgba(34,211,238,.04))">
             <div style="display:grid;grid-template-columns:300px 1fr">
               <div style="position:relative;min-height:100%;background:#04060F">
-                <image-slot id="scholar-photo" shape="rect" placeholder="Scholar portrait / reel"></image-slot>
+                <image-slot id="scholar-photo" shape="rect" placeholder="Scholar portrait / reel" src="https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-1.jpg?sfvrsn=a9adc3ea_2" credit="Photo: HTX — Meet the 2025 HTX scholars" credit-href="https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety"></image-slot>
                 <div style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:999px;background:rgba(6,9,23,.7);backdrop-filter:blur(6px);font-size:11px;letter-spacing:1px;color:#C4B5FD">{{ activeScholar.category }}</div>
               </div>
               <div style="padding:36px 38px">
@@ -436,7 +436,7 @@ a:hover{color:#7DD3FC}
             <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03)">
               <div style="position:relative;height:180px;background:#04060F">
                 <sc-if value="{{ c.isSlot }}" hint-placeholder-val="{{ true }}">
-                  <image-slot id="{{ c.slot }}" shape="rect" placeholder="Social post"></image-slot>
+                  <image-slot id="{{ c.slot }}" shape="rect" placeholder="Social post" src="{{ c.img }}" credit="{{ c.credit }}" credit-href="{{ c.creditHref }}"></image-slot>
                 </sc-if>
                 <sc-if value="{{ c.isThumb }}" hint-placeholder-val="{{ false }}">
                   <button onClick="{{ c.play }}" style="position:absolute;inset:0;border:none;cursor:pointer;padding:0;overflow:hidden;background:#04060F">
@@ -812,21 +812,21 @@ class Component extends DCLogic {
         play: () => this.setState({playing: pid}) };
     };
     const reelData = [
-      { slot:'reel1', q:'What did your mentor help you see differently?' },
-      { slot:'reel2', q:'What did your internship teach you that uni couldn\u2019t?' },
-      { slot:'reel3', q:'When did HTX\u2019s mission become real to you?' },
-      { slot:'reel4', q:'What are you hoping to build when you return?' },
-      { slot:'reel5', q:'What would you tell a new HTX scholar?' },
+      { slot:'reel1', video:'AOFqkSU-IUY', q:'What did your mentor help you see differently?' },
+      { slot:'reel2', video:'175dPVrbvXA', q:'What did your internship teach you that uni couldn\u2019t?' },
+      { slot:'reel3', video:'6-52j8cFphA', q:'When did HTX\u2019s mission become real to you?' },
+      { slot:'reel4', video:'tsARY2Hm_WM', q:'What are you hoping to build when you return?' },
+      { slot:'reel5', video:'0QA52clrjsA', q:'What would you tell a new HTX scholar?' },
     ];
     const reels = reelData.map((r,i)=>mkV(r, 'reel-'+(r.video||i)));
     const heroVideo = mkV({ video:'Tza1qAg2Vho' }, 'hero-film');
     const allWall = [
       { cat:'people', video:'Tza1qAg2Vho', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'What is HTX? The science & technology arm of the Home Team.' },
-      { cat:'tech', slot:'w2', tag:'Technology in Action', chip:'#0EA5E9', src:'Drop in', text:'Add an HTX tech-in-action clip (robotics, drones, forensics).' },
-      { cat:'people', slot:'w3', tag:'People of HTX', chip:'#EC4899', src:'Drop in', text:'Add an HTX engineer or scholar story.' },
-      { cat:'tech', slot:'w4', tag:'Technology in Action', chip:'#0EA5E9', src:'Drop in', text:'Add an HTX capability showcase.' },
-      { cat:'life', slot:'w5', tag:'Scholar Life', chip:'#7C3AED', src:'Instagram', text:'Freshers\u2019 week, first robotics build, first snow abroad.' },
-      { cat:'life', slot:'w6', tag:'Scholar Life', chip:'#7C3AED', src:'Instagram', text:'A day in the life on exchange overseas.' },
+      { cat:'tech', video:'hIqxOVzcSdk', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'Drone Interceptor \u2014 taking down rogue drones over Singapore.' },
+      { cat:'people', video:'-jaH8tTZcLk', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'Want to work for HTX? Hear it from the people building the tech.' },
+      { cat:'tech', video:'DxZZ5ZshIrI', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'HTX Convention 2026 \u2014 highlights from the frontline of public-safety tech.' },
+      { cat:'life', slot:'w5', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'HTX scholars suit up for a cleanroom visit during the scholars\u2019 programme.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-3.jpg?sfvrsn=adaceb06_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
+      { cat:'life', slot:'w6', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'Different journeys, one shared purpose \u2014 scholar life beyond the classroom.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-5.jpg?sfvrsn=3fa4eb3b_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
     ];
     const wi = this.state.wall;
     const wallCats = [ {id:'all',label:'All'},{id:'life',label:'Scholar Life'},{id:'tech',label:'Technology in Action'},{id:'people',label:'People of HTX'} ];
