@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTX BrightSparks Scholarship</title>
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./vendor/dc-runtime.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -564,7 +568,13 @@ a:hover{color:#7DD3FC}
 
       <!-- FAQ -->
       <div style="margin-bottom:40px">
-        <h2 style="margin:0 0 24px;font-family:'Space Grotesk';font-weight:700;font-size:30px;letter-spacing:-.6px;color:#0B1030">Frequently asked questions</h2>
+        <h2 style="margin:0 0 8px;font-family:'Space Grotesk';font-weight:700;font-size:30px;letter-spacing:-.6px;color:#0B1030">Frequently asked questions</h2>
+        <p style="margin:0 0 22px;font-size:15px;color:#6B7396">Everything from eligibility and service commitment to internships, exchange and Master’s sponsorship.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px">
+          <sc-for list="{{ faqCats }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.go }}" style="{{ c.style }}">{{ c.label }}</button>
+          </sc-for>
+        </div>
         <div style="display:flex;flex-direction:column;gap:10px">
           <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
             <div style="border-radius:14px;background:#fff;border:1px solid rgba(11,16,48,.08);overflow:hidden">
@@ -573,7 +583,7 @@ a:hover{color:#7DD3FC}
                 <span style="flex:none;font-size:20px;color:#7C3AED;transform:{{ f.rot }};transition:transform .2s">+</span>
               </button>
               <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-                <div style="padding:0 24px 22px;font-size:15px;line-height:1.6;color:#4A5378">{{ f.a }}</div>
+                <div style="padding:0 24px 22px">{{ f.body }}</div>
               </sc-if>
             </div>
           </sc-for>
@@ -627,7 +637,7 @@ a:hover{color:#7DD3FC}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Electric&quot;,&quot;Ember&quot;,&quot;Signal&quot;],&quot;default&quot;:&quot;Electric&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;,&quot;label&quot;:&quot;Accent palette&quot;},&quot;xMotif&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Kinetic&quot;,&quot;Minimal&quot;,&quot;Off&quot;],&quot;default&quot;:&quot;Kinetic&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;,&quot;label&quot;:&quot;X motif motion&quot;},&quot;heroTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Mission&quot;,&quot;Curiosity&quot;],&quot;default&quot;:&quot;Mission&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Voice&quot;,&quot;label&quot;:&quot;Hero voice&quot;}}">
 class Component extends DCLogic {
-  state = { page: 'why', mission: 0, faq: -1, support: 0, journey: 0, story: 0, wall: 'all', playing: null };
+  state = { page: 'why', mission: 0, faq: -1, faqCat: 'all', support: 0, journey: 0, story: 0, wall: 'all', playing: null };
 
   go(p){ this.setState({ page: p }); if(typeof window!=='undefined') window.scrollTo({top:0,behavior:'smooth'}); }
 
@@ -684,16 +694,26 @@ class Component extends DCLogic {
     };
     const hero = heroCopy[this.props.heroTone] || heroCopy.Mission;
     const faqData = [
-      {q:'Can current undergraduates apply?', a:'Yes. Students already in university may apply, subject to the eligibility on the BrightSparks listing and remaining study duration.'},
-      {q:'Must I have secured a university place?', a:'You may apply before you have a confirmed place. Your offer can be made conditional on securing an approved course.'},
-      {q:'Can I apply before receiving my final results?', a:'Yes. You can apply ahead of your final results; the offer process accommodates results being confirmed later.'},
-      {q:'Can I study overseas?', a:'Yes, where the course is relevant and approved. Overseas scholars are supported throughout their time abroad.'},
-      {q:'How is my course approved?', a:'Courses are assessed for relevance to HTX\u2019s capability needs. Your scholarship coaches help you navigate this.'},
-      {q:'Can I pursue an exchange programme?', a:'Scholars are encouraged and supported to broaden their perspective through exchange, subject to academic requirements and approval.'},
-      {q:'Will I have internship opportunities?', a:'Yes. Internships help you apply your learning and understand real operational and technical challenges at HTX.'},
-      {q:'How will my eventual HTX role be determined?', a:'Your role is discussed as you approach graduation, aligned to your background, strengths and HTX\u2019s needs.'},
-      {q:'Can I pursue a Master\u2019s degree?', a:'Master\u2019s sponsorship is possible, subject to prevailing requirements and approval. Your mentor can advise on postgraduate choices.'},
-      {q:'What support will I receive while studying overseas?', a:'Your scholarship coaches, mentor and buddy stay connected with you before, during and after your studies — wherever you are.'},
+      // --- Applying for the scholarship ---
+      {cat:'apply', q:'I haven’t received my final examination results. Can I still apply?', a:'Yes. You can apply before your final results are released. If you are assessed to be suitable, HTX may make you a provisional offer, which will be confirmed after your results are released.'},
+      {cat:'apply', q:'Can current undergraduates apply?', a:'Yes. You can apply through our mid-term scholarship track if you:', list:['Have completed at least one semester of university','Have a good academic record','Are not in your final year of study']},
+      {cat:'apply', q:'What courses of study are supported?', a:'The HTX Scholarship develops future technical leaders for careers in HTX and the Ministry of Home Affairs. Your proposed course of study should therefore be in a STEM discipline that is relevant to HTX’s work. Examples include:', list:['Aeronautical Engineering','Biomedical Engineering','Business Analytics or Data Science','Chemical Engineering','Civil Engineering','Computer Engineering','Computer Science','Computing','Artificial Intelligence and Machine Learning','Cybersecurity','Electrical and Electronic Engineering','Engineering','Engineering Product Development','Engineering Science','Information Engineering','Information Security','Information Systems and Communications Technology','Information Systems and Design','Information Technology','Life Sciences','Mathematics or Statistics','Mechanical Engineering','Natural Sciences','Systems Engineering'], note:'This list is not exhaustive. Applications for other relevant STEM disciplines may also be considered.'},
+      {cat:'apply', q:'Do I need to secure a university place before applying?', a:'No. You do not need to have secured a university place before submitting your scholarship application.', note:'However, you should indicate the universities and courses that you have applied for. We encourage you to apply for the scholarship early. If you are shortlisted, we will contact you for an update on your university applications.'},
+      {cat:'apply', q:'What is the difference between the HTX Scholarship and the PSC Scholarship (Engineering)?', a:'Both scholarships can lead to a career with HTX. The HTX Scholarship is awarded directly by HTX. The PSC Scholarship (Engineering) is awarded by the Public Service Commission and allows you to choose HTX as your parent agency if you are interested in an engineering-focused career in the Public Service.', note:'Speak with us if you are unsure which scholarship better matches your interests and career aspirations.'},
+      {cat:'apply', q:'When can I apply?', a:'Applications are open from September to March each year.'},
+      {cat:'apply', q:'What can I expect during the application process?', a:'Submit your application through the BrightSparks scholarship portal during the application period. HTX will review all applications, and shortlisted applicants will be invited to participate in further assessments. These may include:', list:['Psychometric assessments','A group assessment centre','A final panel interview'], note:'The selection process typically takes two to three months. We will keep you updated on your application throughout the process.'},
+      // --- Scholarship benefits and terms ---
+      {cat:'terms', q:'What does the HTX Scholarship cover?', a:'The scholarship covers:', list:['Tuition fees, examination fees and other compulsory university fees','Living allowances','Other approved expenses, such as medical examination and visa-processing fees','A one-time pre-studies allowance','Sponsorship for relevant exchange or summer programmes that broaden your academic, professional and cross-cultural perspectives','Sponsorship for a relevant Master’s degree that deepens your expertise and broadens your perspectives, subject to approval','For mid-term scholars, reimbursement of tuition fees and compulsory fees incurred before the scholarship was awarded']},
+      {cat:'terms', q:'What is my service commitment?', a:'Your service commitment depends on where you pursue your undergraduate studies:', list:['Four years for undergraduate studies in Singapore','Five years for undergraduate studies in a non-English-speaking country','Six years for undergraduate studies in an English-speaking country']},
+      {cat:'terms', q:'Can I hold another scholarship at the same time?', a:'No. You cannot hold another scholarship at the same time as the HTX Scholarship.'},
+      {cat:'terms', q:'Can I change my course of study after accepting the scholarship?', a:'You must consult HTX and obtain approval before making any changes to your approved course of study.'},
+      // --- Life as an HTX scholar ---
+      {cat:'life', q:'Will I have the opportunity to intern with HTX during my studies?', a:'Yes. You will have the opportunity to complete at least one internship with HTX, typically during your first year of study. You will gain practical experience by contributing to real projects, such as developing artificial intelligence models, before joining HTX full-time.', note:'You can read about our scholars’ internship experiences on the Our Scholars page.'},
+      {cat:'life', q:'Which teams or projects could I work with during my HTX internship?', a:'Your internship placement will depend on your area of specialisation and HTX’s organisational needs at the time. HTX scholars have worked across a wide range of domains, including:', list:['Forensics','Robotics, Automation and Unmanned Systems','Human Factors and Simulation','Cybersecurity','Data Science','Artificial Intelligence Engineering'], note:'Visit our Work & Careers page to learn more about the areas in which you may specialise.'},
+      {cat:'life', q:'Can I take up internships with other organisations?', a:'You must consult HTX and obtain approval before accepting an internship with another organisation.'},
+      {cat:'life', q:'Can I attend exchange or summer programmes during my studies?', a:'Yes. You may attend relevant exchange or summer programmes with HTX’s approval. These programmes should complement your main course of study, broaden your academic, professional or cross-cultural perspectives, and contribute meaningfully to your development for a future career with HTX.', note:'Each request will be considered based on factors such as the relevance and value of the programme, your academic progress and your ability to manage the additional commitments. You are expected to remain on track to graduate with at least a Second Class Honours (Upper) degree or its equivalent.'},
+      {cat:'life', q:'Can I pursue a Master’s degree under the scholarship?', a:'Sponsorship for a Master’s degree may be considered, subject to HTX’s approval.', note:'The programme should be relevant to HTX’s work and your anticipated career pathway. It should deepen your technical or professional expertise, broaden your perspectives, and strengthen your ability to contribute to HTX after graduation.'},
+      {cat:'life', q:'Will I be able to choose which HTX division to join after graduation?', a:'You will have the opportunity to indicate your preferences. We will match you to a role that takes into account:', list:['Your interests','Your area of specialisation','The roles available','HTX’s organisational and capability needs']},
     ];
     const reasons = [
       { num:'01', icon:'◎', chip:'linear-gradient(135deg,#7C3AED,#A855F7)', title:'Work with purpose', body:'Apply your knowledge to public-safety problems where the outcome matters to officers, the public and Singapore.' },
@@ -817,6 +837,35 @@ class Component extends DCLogic {
     }));
     const wallCards = (wi==='all' ? allWall : allWall.filter(c=>c.cat===wi))
       .map((c,i)=>mkV(c, 'wall-'+(c.video||c.slot||i)));
+    const faqCatDefs = [
+      {id:'all',   label:'All questions'},
+      {id:'apply', label:'Applying for the scholarship'},
+      {id:'terms', label:'Benefits & terms'},
+      {id:'life',  label:'Life as an HTX scholar'},
+    ];
+    const fci = this.state.faqCat;
+    const faqCats = faqCatDefs.map(c=>({
+      label:c.label,
+      go:()=>this.setState({faqCat:c.id, faq:-1}),
+      style:`padding:9px 16px;border-radius:999px;cursor:pointer;font-family:'Space Grotesk';font-weight:600;font-size:13.5px;transition:all .15s;border:1px solid ${fci===c.id?'transparent':'rgba(11,16,48,.14)'};background:${fci===c.id?'var(--htx-grad,linear-gradient(135deg,#7C3AED,#22D3EE))':'#fff'};color:${fci===c.id?'#fff':'#4A5378'}`,
+    }));
+    const faqBody = f => {
+      const kids = [ React.createElement('p',{key:'a',style:{margin:0,fontSize:'15px',lineHeight:1.6,color:'#4A5378'}}, f.a) ];
+      if(f.list) kids.push(React.createElement('ul',{key:'l',style:{margin:'12px 0 0',padding:'0 0 0 20px',display:'flex',flexDirection:'column',gap:'6px'}},
+        f.list.map((t,k)=>React.createElement('li',{key:k,style:{fontSize:'15px',lineHeight:1.55,color:'#4A5378'}}, t))));
+      if(f.note) kids.push(React.createElement('p',{key:'n',style:{margin:'14px 0 0',fontSize:'14px',lineHeight:1.6,color:'#6B7396'}}, f.note));
+      return React.createElement('div',{}, kids);
+    };
+    const faqs = faqData
+      .map((f,i)=>({f,i}))
+      .filter(o => fci==='all' || o.f.cat===fci)
+      .map(({f,i})=>({
+        q:f.q,
+        body: faqBody(f),
+        open: this.state.faq===i,
+        rot: this.state.faq===i ? 'rotate(45deg)' : 'rotate(0deg)',
+        toggle: () => this.setState(st=>({faq: st.faq===i?-1:i})),
+      }));
     return {
       navItems,
       heroEyebrow: hero.eyebrow, heroPre: hero.pre, heroAccent: hero.accent, heroSub: hero.sub, heroVideo,
@@ -826,7 +875,7 @@ class Component extends DCLogic {
       beyond,
       journeyTabs, activeJourney: journey[ji], journeyProgress: `${((ji+1)/journey.length)*100}%`,
       scholarTabs, activeScholar: scholars[sti], reels, wallTabs, wallCards,
-      supports: ['Tuition fees','Maintenance allowance','Approved academic charges','Pre-studies allowance','Airfare, where applicable','Master\u2019s sponsorship, subject to prevailing requirements and approval'],
+      supports: ['Tuition, examination and other compulsory university fees','Living allowances','Other approved expenses, such as medical examination and visa-processing fees','A one-time pre-studies allowance','Sponsorship for relevant exchange or summer programmes','Master\u2019s sponsorship, subject to approval','Mid-term scholars: reimbursement of fees paid before the award'],
       eligibility: ['Passionate about science and technology, with a strong academic record','Keen to contribute to Singapore\u2019s safety and security through public service','Singapore Citizen (or as specified on the BrightSparks listing)','Applying to, or enrolled in, a relevant course approved by HTX'],
       areas: [
         {icon:'AI', chip:'linear-gradient(135deg,#7C3AED,#A855F7)', title:'Computing, AI & data'},
@@ -847,12 +896,7 @@ class Component extends DCLogic {
         {n:'3', title:'Assessments & interviews'},
         {n:'4', title:'Scholarship offer'},
       ],
-      faqs: faqData.map((f,i)=>({
-        q:f.q, a:f.a,
-        open: this.state.faq===i,
-        rot: this.state.faq===i ? 'rotate(45deg)' : 'rotate(0deg)',
-        toggle: () => this.setState(st=>({faq: st.faq===i?-1:i})),
-      })),
+      faqCats, faqs,
       goHome: () => this.go('why'),
       goApply: () => this.go('apply'),
       goWork: () => this.go('work'),
