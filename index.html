@@ -105,7 +105,7 @@ a:hover{color:#7DD3FC}
             <div style="font-size:12px;letter-spacing:2.5px;color:#8B5CF6;margin-bottom:12px">WHY CHOOSE HTX</div>
             <h2 style="margin:0;font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.8px;color:#fff;max-width:520px">Four reasons scholars choose the frontline</h2>
           </div>
-          <p style="margin:0;max-width:360px;font-size:15px;line-height:1.6;color:#9AA3C4">More than a scholarship — a developmental journey from classroom to real-world impact.</p>
+          <p style="margin:0;max-width:360px;font-size:15px;line-height:1.6;color:#9AA3C4">More than a scholarship: a developmental journey from classroom to real-world impact.</p>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px">
           <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="4">
@@ -141,7 +141,7 @@ a:hover{color:#7DD3FC}
       <div style="position:relative;max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:14px">WORK &amp; CAREERS</div>
         <h1 style="margin:0 0 26px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(36px,5.5vw,64px);line-height:1.04;letter-spacing:-1.3px;color:#fff;max-width:820px">Find your place at HTX</h1>
-        <p style="margin:0;font-size:18px;line-height:1.65;color:#B4BAD6;max-width:680px">You may be drawn to AI, chemistry, robotics, cybersecurity or engineering. At HTX these aren't isolated disciplines — they come together to solve operational challenges that are complex, urgent and unprecedented. Explore where your interests could take you.</p>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#B4BAD6;max-width:680px">You may be drawn to AI, chemistry, robotics, cybersecurity or engineering. At HTX these aren't isolated disciplines. They come together to solve operational challenges that are complex, urgent and unprecedented. Explore where your interests could take you.</p>
       </div>
     </section>
 
@@ -149,7 +149,7 @@ a:hover{color:#7DD3FC}
     <section style="padding:36px 5vw 96px;background:#060917">
       <div style="max-width:1200px;margin:0 auto">
         <h2 style="margin:0 0 8px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.6vw,38px);letter-spacing:-.6px;color:#fff">Choose your <span style="color:#8B5CF6">X</span></h2>
-        <p style="margin:0 0 32px;font-size:15px;color:#9AA3C4">Pick a mission to see the technology behind it — and the fields that lead there.</p>
+        <p style="margin:0 0 32px;font-size:15px;color:#9AA3C4">Pick a mission to see the technology behind it, and the fields that lead there.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px">
           <sc-for list="{{ missionTabs }}" as="m" hint-placeholder-count="5">
             <button onClick="{{ m.go }}" style="{{ m.style }}">{{ m.label }}</button>
@@ -164,7 +164,7 @@ a:hover{color:#7DD3FC}
             <p style="margin:0;font-size:15px;line-height:1.8;color:#D3D8EC">{{ activeMission.fieldsText }}</p>
           </div>
           <div style="position:relative;min-height:340px;background:#04060F">
-            <image-slot id="{{ activeMission.slotId }}" shape="rect" placeholder="Mission footage — officers using HTX technology in the field" src="{{ activeMission.img }}" credit="{{ activeMission.credit }}" credit-href="{{ activeMission.creditHref }}"></image-slot>
+            <image-slot id="{{ activeMission.slotId }}" shape="rect" placeholder="Mission footage: officers using HTX technology in the field" src="{{ activeMission.img }}" credit="{{ activeMission.credit }}" credit-href="{{ activeMission.creditHref }}"></image-slot>
             <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,9,23,.85),transparent 45%);pointer-events:none"></div>
             <div aria-hidden="true" style="position:absolute;right:24px;bottom:14px;font-family:'Space Grotesk';font-weight:700;font-size:150px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);pointer-events:none">X</div>
           </div>
@@ -176,7 +176,7 @@ a:hover{color:#7DD3FC}
     <section style="padding:96px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">FROM IDEA TO OPERATIONAL IMPACT</div>
-        <h2 style="margin:0 0 48px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:640px">See the full journey — from a frontline need to a deployed capability</h2>
+        <h2 style="margin:0 0 48px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:640px">See the full journey, from a frontline need to a deployed capability</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0">
           <sc-for list="{{ pipeline }}" as="s" hint-placeholder-count="4">
             <div style="position:relative;padding:0 22px 0 0">
@@ -197,7 +197,7 @@ a:hover{color:#7DD3FC}
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">TECHNOLOGY IN ACTION</div>
         <h2 style="margin:0 0 12px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:640px">See the tech you could work on</h2>
-        <p style="margin:0 0 40px;font-size:15px;line-height:1.6;color:#9AA3C4;max-width:560px">Real capabilities, from the official HTX channel — the kind of work waiting on the other side of your degree.</p>
+        <p style="margin:0 0 40px;font-size:15px;line-height:1.6;color:#9AA3C4;max-width:560px">Real capabilities from the official HTX channel: the kind of work waiting on the other side of your degree.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
           <sc-for list="{{ workVideos }}" as="v" hint-placeholder-count="4">
             <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03)">
@@ -276,7 +276,7 @@ a:hover{color:#7DD3FC}
     <section style="padding:88px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:12px">THREE LAYERS OF SUPPORT</div>
-        <h2 style="margin:0 0 36px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">Three roles, all focused on one person — you</h2>
+        <h2 style="margin:0 0 36px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:560px">Three roles, all focused on one person: you</h2>
         <div style="display:grid;grid-template-columns:320px 1fr;gap:28px;align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <sc-for list="{{ supportTabs }}" as="s" hint-placeholder-count="3">
@@ -294,7 +294,7 @@ a:hover{color:#7DD3FC}
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px">
               <sc-for list="{{ activeSupport.items }}" as="it" hint-placeholder-count="5">
                 <div style="display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:#D3D8EC">
-                  <span style="flex:none;color:#22D3EE;margin-top:1px">✕</span><span>{{ it }}</span>
+                  <span style="flex:none;color:#22D3EE;margin-top:1px">✓</span><span>{{ it }}</span>
                 </div>
               </sc-for>
             </div>
@@ -366,7 +366,7 @@ a:hover{color:#7DD3FC}
       <div style="position:relative;max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#22D3EE;margin-bottom:14px">OUR SCHOLARS</div>
         <h1 style="margin:0 0 24px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(36px,5.5vw,64px);line-height:1.04;letter-spacing:-1.3px;color:#fff;max-width:820px">Different journeys.<br><span style="background:var(--htx-head,linear-gradient(120deg,#A78BFA,#22D3EE));-webkit-background-clip:text;background-clip:text;color:transparent">One shared purpose.</span></h1>
-        <p style="margin:0;font-size:18px;line-height:1.65;color:#B4BAD6;max-width:660px">There's no single type of HTX scholar. They study different disciplines in different parts of the world — connected by a desire to use science and technology to make a meaningful contribution.</p>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#B4BAD6;max-width:660px">There's no single type of HTX scholar. They study different disciplines in different parts of the world, connected by a desire to use science and technology to make a meaningful contribution.</p>
       </div>
     </section>
 
@@ -407,7 +407,7 @@ a:hover{color:#7DD3FC}
             </div>
           </div>
         </div>
-        <p style="margin:0;font-size:12.5px;color:#5B6488;max-width:820px">Profiles and photos are drawn from publicly shared HTX stories — follow the link on each profile to read the scholar's full feature on htx.gov.sg.</p>
+        <p style="margin:0;font-size:12.5px;color:#5B6488;max-width:820px">Profiles and photos are drawn from publicly shared HTX stories. Follow the link on each profile to read the scholar's full feature on htx.gov.sg.</p>
       </div>
     </section>
 
@@ -415,13 +415,13 @@ a:hover{color:#7DD3FC}
     <section style="padding:88px 5vw;background:#080C1E">
       <div style="max-width:1200px;margin:0 auto">
         <div style="font-size:12px;letter-spacing:2.5px;color:#8B5CF6;margin-bottom:12px">ONE QUESTION · ONE SCHOLAR</div>
-        <h2 style="margin:0 0 40px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:600px">Short, honest answers — not scripted corporate interviews</h2>
+        <h2 style="margin:0 0 40px;font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,3.8vw,42px);letter-spacing:-.7px;color:#fff;max-width:600px">Short, honest answers, not scripted corporate interviews</h2>
         <div class="htx-scroll" style="display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory">
           <sc-for list="{{ reels }}" as="r" hint-placeholder-count="4">
             <div style="flex:none;width:230px;scroll-snap-align:start">
               <div style="position:relative;width:230px;height:340px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:#04060F">
                 <sc-if value="{{ r.isSlot }}" hint-placeholder-val="{{ true }}">
-                  <image-slot id="{{ r.slot }}" shape="rect" placeholder="Scholar reel — coming soon"></image-slot>
+                  <image-slot id="{{ r.slot }}" shape="rect" placeholder="Scholar reel coming soon"></image-slot>
                 </sc-if>
                 <sc-if value="{{ r.isThumb }}" hint-placeholder-val="{{ false }}">
                   <button onClick="{{ r.play }}" style="position:absolute;inset:0;border:none;cursor:pointer;padding:0;overflow:hidden;background:#04060F">
@@ -555,7 +555,7 @@ a:hover{color:#7DD3FC}
       <!-- ELIGIBILITY -->
       <div style="margin-bottom:72px">
         <h2 style="margin:0 0 8px;font-family:'Space Grotesk';font-weight:700;font-size:30px;letter-spacing:-.6px;color:#0B1030">Eligibility</h2>
-        <p style="margin:0 0 24px;font-size:14px;color:#6B7399">Indicative — full criteria are set out on the BrightSparks listing.</p>
+        <p style="margin:0 0 24px;font-size:14px;color:#6B7399">Indicative. Full criteria are set out on the BrightSparks listing.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
           <sc-for list="{{ eligibility }}" as="e" hint-placeholder-count="4">
             <div style="display:flex;gap:12px;align-items:flex-start;padding:18px 20px;border-radius:14px;background:#fff;border:1px solid rgba(11,16,48,.08);font-size:15px;line-height:1.5;color:#2A3358">
@@ -737,7 +737,7 @@ class Component extends DCLogic {
         eyebrow:'CURIOUS MINDS · REAL-WORLD SCIENCE & TECH',
         pre:'Follow your curiosity all the way to the ',
         accent:'frontline.',
-        sub:'At HTX, the questions you love — how things work, and how to make them better — become the tools that help keep people safe. Explore widely, go deep, and see where your curiosity can lead.',
+        sub:'At HTX, the questions you love, like how things work and how to make them better, become the tools that help keep people safe. Explore widely, go deep, and see where your curiosity can lead.',
       },
     };
     const hero = heroCopy[this.props.heroTone] || heroCopy.Mission;
@@ -767,19 +767,19 @@ class Component extends DCLogic {
       { num:'01', icon:'◎', chip:'linear-gradient(135deg,#7C3AED,#A855F7)', title:'Work with purpose', body:'Apply your knowledge to public-safety problems where the outcome matters to officers, the public and Singapore.' },
       { num:'02', icon:'⌘', chip:'linear-gradient(135deg,#6366F1,#22D3EE)', title:'Explore across disciplines', body:'See how AI, engineering, robotics, cyber, forensics, science and human factors come together to solve complex challenges.' },
       { num:'03', icon:'◈', chip:'linear-gradient(135deg,#0EA5E9,#22D3EE)', title:'Learn through experience', body:'Broaden your perspective through internships, exchange programmes and exposure to real operational problems.' },
-      { num:'04', icon:'♥', chip:'linear-gradient(135deg,#8B5CF6,#EC4899)', title:'Be supported throughout', body:'Journey with scholarship coaches, a trusted mentor and a buddy — before, during and after your studies.' },
+      { num:'04', icon:'♥', chip:'linear-gradient(135deg,#8B5CF6,#EC4899)', title:'Be supported throughout', body:'Journey with scholarship coaches, a trusted mentor and a buddy, before, during and after your studies.' },
     ];
     const missions = [
       { label:'Save lives', tag:'MISSION 01 · SAVE LIVES', title:'Help officers operate more safely', body:'Develop robotics, sensors, emergency-response technologies and human-performance solutions that help frontline officers act faster and safer.', fields:['Robotics','Mechanical Eng','Electrical Eng','Computer Eng','Human Factors'],
-        slotId:'mission-save-lives', img:'https://www.htx.gov.sg/images/default-source/news/2025/techxplore-at-garage-htx/techxplore-3.jpg?sfvrsn=18219405_2', credit:'Photo: HTX — robotics at TechXplore', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/revolutionising-home-team-operations-on-all-fronts' },
+        slotId:'mission-save-lives', img:'https://www.htx.gov.sg/images/default-source/news/2025/techxplore-at-garage-htx/techxplore-3.jpg?sfvrsn=18219405_2', credit:'Photo: HTX · robotics at TechXplore', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/revolutionising-home-team-operations-on-all-fronts' },
       { label:'Solve crimes', tag:'MISSION 02 · SOLVE CRIMES', title:'Uncover evidence, strengthen investigations', body:'Apply forensic science, data and artificial intelligence to reveal evidence and give investigators sharper, faster insight.', fields:['Chemistry','Biology','Forensic Science','Data Science','AI','Computer Science'],
-        slotId:'mission-solve-crimes', img:'https://www.htx.gov.sg/images/default-source/news/2025/first-lab/first-lab-4.jpg?sfvrsn=e83b8c6_2', credit:'Photo: HTX — FIRST forensics lab', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/htx-unveils-first-an-advanced-forensic-rd-lab' },
+        slotId:'mission-solve-crimes', img:'https://www.htx.gov.sg/images/default-source/news/2025/first-lab/first-lab-4.jpg?sfvrsn=e83b8c6_2', credit:'Photo: HTX · FIRST forensics lab', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/htx-unveils-first-an-advanced-forensic-rd-lab' },
       { label:'Secure borders', tag:'MISSION 03 · SECURE BORDERS', title:'Seamless, secure movement of people', body:'Use biometrics, screening systems, sensing technologies and data to support secure and seamless border operations.', fields:['Computer Vision','Electrical Eng','Systems Eng','Data Science','Psychology'],
-        slotId:'mission-secure-borders', img:'https://www.htx.gov.sg/images/default-source/news/2022/sal_t2dep.jpeg?sfvrsn=5be9f46a_3', credit:'Photo: HTX — automated immigration clearance', creditHref:'https://www.htx.gov.sg/news/featured-news-flying-through-automated-immigration-clearance' },
+        slotId:'mission-secure-borders', img:'https://www.htx.gov.sg/images/default-source/news/2022/sal_t2dep.jpeg?sfvrsn=5be9f46a_3', credit:'Photo: HTX · automated immigration clearance', creditHref:'https://www.htx.gov.sg/news/featured-news-flying-through-automated-immigration-clearance' },
       { label:'Safeguard systems', tag:'MISSION 04 · SAFEGUARD SYSTEMS', title:'Protect mission-critical digital systems', body:'Protect the digital systems the Home Team relies on, and build resilient platforms ready for the threats of tomorrow.', fields:['Cybersecurity','Computer Science','Cloud Eng','Software Eng','Information Systems'],
-        slotId:'mission-safeguard-systems', img:'https://www.htx.gov.sg/images/default-source/news/2026/def-con-sg-launch/def-con-sg-launch-2.jpg?sfvrsn=b24fffaa_2', credit:'Photo: HTX — DEF CON Singapore', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/inside-def-con-singapore-where-hackers-battle-it-out-to-strengthen-cybersecurity' },
+        slotId:'mission-safeguard-systems', img:'https://www.htx.gov.sg/images/default-source/news/2026/def-con-sg-launch/def-con-sg-launch-2.jpg?sfvrsn=b24fffaa_2', credit:'Photo: HTX · DEF CON Singapore', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/inside-def-con-singapore-where-hackers-battle-it-out-to-strengthen-cybersecurity' },
       { label:'Protect public spaces', tag:'MISSION 05 · PROTECT PUBLIC SPACES', title:'Safer spaces in a dense city', body:'Design safer infrastructure, surveillance systems, vehicles and technologies for a dense and complex urban environment.', fields:['Civil Eng','Architecture','Systems Eng','Electronics','Industrial Design'],
-        slotId:'mission-public-spaces', img:'https://www.htx.gov.sg/images/default-source/news/2024/defending-sg-1-min.jpg?sfvrsn=3c8792a7_3', credit:'Photo: HTX — defending Singapore from explosive threats', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2024/featured-news--defending-singapore-in-depth-from-explosive-threats' },
+        slotId:'mission-public-spaces', img:'https://www.htx.gov.sg/images/default-source/news/2024/defending-sg-1-min.jpg?sfvrsn=3c8792a7_3', credit:'Photo: HTX · defending Singapore from explosive threats', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2024/featured-news--defending-singapore-in-depth-from-explosive-threats' },
     ];
     const mi = this.state.mission;
     const missionTabs = missions.map((m,i)=>({
@@ -799,8 +799,8 @@ class Component extends DCLogic {
       { step:'LEAD', title:'Lead programmes & missions', body:'Shape major projects, technology portfolios, partnerships and future capability directions.' },
     ];
     const support = [
-      { role:'Scholarship Coaches', value:'Guides the overall journey', head:'Guiding the overall journey', listLabel:'THEIR ROLE MAY INCLUDE', body:'A dedicated team supports you before, during and after your studies — helping you navigate the scholarship journey, stay connected with HTX and access the right support at each stage.', items:['Preparing you for your studies','Checking in on academic & personal progress','Connecting you to opportunities & resources','Supporting your transition from university to HTX','Helping you navigate scholarship matters'] },
-      { role:'Your Mentor', value:'Advises on academic & career choices', head:'A trusted adviser for important choices', listLabel:'A SOUNDING BOARD FOR', body:'An HTX mentor journeys with you and offers perspective on your development — an experienced professional who helps you think, not someone who decides for you.', items:['Academic & specialisation choices','Exchange programmes','Internship opportunities','Career interests & possible roles','Postgraduate or Master\u2019s studies','Longer-term professional development'] },
+      { role:'Scholarship Coaches', value:'Guides the overall journey', head:'Guiding the overall journey', listLabel:'THEIR ROLE MAY INCLUDE', body:'A dedicated team supports you before, during and after your studies, helping you navigate the scholarship journey, stay connected with HTX and access the right support at each stage.', items:['Preparing you for your studies','Checking in on academic & personal progress','Connecting you to opportunities & resources','Supporting your transition from university to HTX','Helping you navigate scholarship matters'] },
+      { role:'Your Mentor', value:'Advises on academic & career choices', head:'A trusted adviser for important choices', listLabel:'A SOUNDING BOARD FOR', body:'An HTX mentor journeys with you and offers perspective on your development: an experienced professional who helps you think, not someone who decides for you.', items:['Academic & specialisation choices','Exchange programmes','Internship opportunities','Career interests & possible roles','Postgraduate or Master\u2019s studies','Longer-term professional development'] },
       { role:'Your Buddy', value:'Informal, relatable, personal', head:'A companion who understands the journey', listLabel:'YOUR BUDDY CAN HELP WITH', body:'Someone you can approach for informal advice, practical questions, or simply a conversation when you need one.', items:['Everyday questions about HTX or the scholarship','Adjusting to university or life overseas','Sharing practical experiences','Managing moments of uncertainty or stress','Connecting with the wider scholar community'] },
     ];
     const si = this.state.support;
@@ -830,13 +830,13 @@ class Component extends DCLogic {
     const scholars = [
       { name:'Jaren Chua', discipline:'Computer Engineering', category:'FINDING MY PLACE', role:'HTX Scholar · Computer Engineering, University of Illinois Urbana-Champaign',
         slotId:'scholar-jaren', img:'https://www.htx.gov.sg/images/default-source/stories/2024-jul-sep/jaren-chua-profile-min.jpg?sfvrsn=da522b29_5', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/join-us/our-stories/2024/meet-our-htx-scholar--jaren-chua', storyHref:'https://www.htx.gov.sg/join-us/our-stories/2024/meet-our-htx-scholar--jaren-chua', qa:[
-        {q:'What first attracted you to HTX?', a:'The chance to work at the intersection of robotics, sensing and AI on problems with real operational stakes — I first came across the scholarship through a careers portal and HTX\u2019s social channels.'},
-        {q:'What did you study, and why?', a:'Computer engineering — it lets me build across hardware and software, from sensors to sense-making.'},
-        {q:'What public-safety challenge would you like to help solve?', a:'Making immigration clearance faster and more seamless — ultimately, secure passport-less travel.'},
+        {q:'What first attracted you to HTX?', a:'The chance to work at the intersection of robotics, sensing and AI on problems with real operational stakes. I first came across the scholarship through a careers portal and HTX\u2019s social channels.'},
+        {q:'What did you study, and why?', a:'Computer engineering: it lets me build across hardware and software, from sensors to sense-making.'},
+        {q:'What public-safety challenge would you like to help solve?', a:'Making immigration clearance faster and more seamless, and ultimately secure passport-less travel.'},
       ]},
       { name:'Ng Jian Yan', discipline:'Human Factors Science', category:'SEEING THE WORLD DIFFERENTLY', role:'Human Performance, Interaction & Teaming Scientist · MPhil Technology Policy, University of Cambridge',
         slotId:'scholar-jianyan', img:'https://www.htx.gov.sg/images/default-source/stories/2021/ng-jian-yan_scdf.jpg?sfvrsn=53c22c60_1', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/our-people/get-to-know-them/talent-details/the-writer-and-the-sportsman-two-scholars-different-roads-to-htx', storyHref:'https://www.htx.gov.sg/our-people/get-to-know-them/talent-details/the-writer-and-the-sportsman-two-scholars-different-roads-to-htx', qa:[
-        {q:'Which experience broadened your perspective most?', a:'An internship developing image-dehazing models for maritime surveillance, plus the Home Team Scholars\u2019 Vacation Programme — theory suddenly had an operational edge.'},
+        {q:'Which experience broadened your perspective most?', a:'An internship developing image-dehazing models for maritime surveillance, plus the Home Team Scholars\u2019 Vacation Programme. Theory suddenly had an operational edge.'},
         {q:'What did you study, and why?', a:'I moved toward technology policy to understand how science translates into decisions people can trust.'},
         {q:'When did HTX\u2019s mission become real to you?', a:'Seeing a model I helped build sharpen what a Coast Guard officer could actually see at sea.'},
       ]},
@@ -848,7 +848,7 @@ class Component extends DCLogic {
       ]},
       { name:'Cheryl Kwek', discipline:'Computer Science', category:'CLASSROOM TO REAL-WORLD', role:'HTX Scholar · Computer Science, Singapore University of Technology & Design',
         slotId:'scholar-cheryl', img:'https://static.scholarschoice.com.sg/wp-content/uploads/2024/02/SC2-2024_Digital_HTX-Cheryl.jpg', credit:'Photo: Scholars’ Choice', creditHref:'https://www.scholarschoice.com.sg/experience/htx-scholarship-using-robotics-to-detect-contraband-items-quicker-online/', storyHref:'https://www.htx.gov.sg/join-us/our-stories/2022/congratulations-to-our-htx-scholars', qa:[
-        {q:'What did you study, and why?', a:'Computer science with a robotics focus — a passion I\u2019ve chased since leading my school\u2019s robotics club.'},
+        {q:'What did you study, and why?', a:'Computer science with a robotics focus, a passion I\u2019ve chased since leading my school\u2019s robotics club.'},
         {q:'What first attracted you to HTX?', a:'Robotics applied to keeping people safe, not just to competitions and labs.'},
         {q:'What public-safety challenge would you like to help solve?', a:'Autonomous systems that can go where it\u2019s too dangerous for officers.'},
       ]},
@@ -870,7 +870,7 @@ class Component extends DCLogic {
         play: () => this.setState({playing: pid}) };
     };
     // Scholar-interview reels: intentionally left as drop-in slots until HTX
-    // publishes real scholar reels \u2014 generic agency videos don't answer these
+    // publishes real scholar reels; generic agency videos don't answer these
     // questions, so a blank slot is more honest than a mismatched clip.
     const reelData = [
       { slot:'reel1', q:'What did your mentor help you see differently?' },
@@ -881,7 +881,7 @@ class Component extends DCLogic {
     ];
     const reels = reelData.map((r,i)=>mkV(r, 'reel-'+(r.video||i)));
     const heroVideo = mkV({ video:'Tza1qAg2Vho' }, 'hero-film');
-    // Official HTXSG tech films — shown on Work & Careers, where capability
+    // Official HTXSG tech films, shown on Work & Careers, where capability
     // showcases belong (not as stand-ins for scholar interviews).
     const workVideoData = [
       { video:'hIqxOVzcSdk', tag:'PROTECT PUBLIC SPACES', title:'Drone Interceptor', text:'Detecting and taking down rogue drones over Singapore.' },
@@ -894,10 +894,10 @@ class Component extends DCLogic {
     const allWall = [
       { cat:'people', video:'Tza1qAg2Vho', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'What is HTX? The science & technology arm of the Home Team.' },
       { cat:'people', video:'-jaH8tTZcLk', tag:'People of HTX', chip:'#EC4899', src:'YouTube', text:'Want to work for HTX? Hear it from the people building the tech.' },
-      { cat:'life', video:'0QA52clrjsA', tag:'Scholar Life', chip:'#7C3AED', src:'YouTube', text:'HTXpress visits Hwa Chong \u2014 scholarships and careers, on the road.' },
+      { cat:'life', video:'0QA52clrjsA', tag:'Scholar Life', chip:'#7C3AED', src:'YouTube', text:'HTXpress visits Hwa Chong: scholarships and careers, on the road.' },
       { cat:'tech', video:'6-52j8cFphA', tag:'Technology in Action', chip:'#0EA5E9', src:'YouTube', text:'Exponentially impacting Singapore\u2019s safety and security.' },
       { cat:'life', slot:'w5', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'HTX scholars suit up for a cleanroom visit during the scholars\u2019 programme.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-3.jpg?sfvrsn=adaceb06_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
-      { cat:'life', slot:'w6', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'Different journeys, one shared purpose \u2014 scholar life beyond the classroom.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-5.jpg?sfvrsn=3fa4eb3b_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
+      { cat:'life', slot:'w6', tag:'Scholar Life', chip:'#7C3AED', src:'htx.gov.sg', text:'Different journeys, one shared purpose: scholar life beyond the classroom.', img:'https://www.htx.gov.sg/images/default-source/news/2025/htx-scholars/scholars-5.jpg?sfvrsn=3fa4eb3b_2', credit:'Photo: HTX', creditHref:'https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/meet-the-2025-htx-scholars-poised-to-shape-the-future-of-public-safety' },
     ];
     const wi = this.state.wall;
     const wallCats = [ {id:'all',label:'All'},{id:'life',label:'Scholar Life'},{id:'tech',label:'Technology in Action'},{id:'people',label:'People of HTX'} ];
